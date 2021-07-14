@@ -1,9 +1,8 @@
-import { createContext, useEffect, useRef, useState } from "react";
-import { MoviesContextModel, MoviesModel } from "../Types";
-import { getData } from "./../helpers/getData";
-import { BASE_URL, createGenreUrl, createSearchUrl } from "../Url/URL";
+import { createContext, useEffect, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import { DataModel } from "./../Types";
+import { MoviesModel } from "../Types";
+import { BASE_URL, createGenreUrl, createSearchUrl } from "../Url/URL";
+import { getData } from "./../helpers/getData";
 
 export const moviesContext = createContext({
   movies: {},
