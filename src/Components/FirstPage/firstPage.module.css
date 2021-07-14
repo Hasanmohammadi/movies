@@ -1,0 +1,51 @@
+.container {
+  width: 80%;
+
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 3em;
+  grid-row-gap: 2em;
+}
+
+.card {
+  width: 100%;
+  border: black solid 1px;
+  display: flex;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.card:hover {
+  width: 100.5%;
+  margin-right: 15px;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    1px 14px 24px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 10px 13px -7px #000000, 1px 14px 24px 10px rgba(0, 0, 0, 0.6);
+}
+
+.image {
+  width: 50%;
+}
+
+.information {
+  width: 50%;
+  text-align: center;
+  padding: 5em 0 0 0;
+}
+
+.searchInput {
+  margin: 0px 0px 2em 0px;
+  width: 20%;
+  height: 1.5em;
+}
+
+.addBtn {
+  background: #0066ff;
+  color: gold;
+  cursor: pointer;
+  margin: 0 0px 2em 0px;
+  border: #0066ff;
+  height: 2em;
+  border-radius: 3px;
+}

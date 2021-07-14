@@ -1,0 +1,13 @@
+.container{
+    width: 80%;
+    height: 13em;
+    margin: auto;
+}
+
+.title {
+    width: max-content;
+    color: red;
+    margin: auto;
+    font-weight: 800;
+}
+
