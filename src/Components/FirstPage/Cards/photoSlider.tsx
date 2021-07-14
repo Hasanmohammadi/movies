@@ -15,8 +15,7 @@ const PhotoSlider: React.FC<PhotoSliderProps> = ({ photos }) => {
     height: "42em",
     margin: "auto",
   };
-  console.log(photos);
-
+  
   return (
     <div style={containerStyle}>
       <Carousel>

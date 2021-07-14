@@ -20,13 +20,11 @@ const Genrs: React.FC<GenrsProps> = () => {
 
   function handleButtonClick(e: any) {
     message.info("All genre selected.");
-    console.log("click left button", e);
     setgenreId(0);
     getAllMovies();
   }
 
   function handleMenuClick(e: any) {
-    console.log(e.domEvent.target.textContent);
     const genreId = genres?.find(
       (genre) => genre.name === e.domEvent.target.textContent
     );

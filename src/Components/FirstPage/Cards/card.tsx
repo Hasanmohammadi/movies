@@ -4,7 +4,7 @@ import { moviesContext } from "./../../../Context/contextMovies";
 import { getData } from "./../../../helpers/getData";
 import { getMovieInfoUrl } from "./../../../Url/URL";
 import PhotoSlider from "./photoSlider";
-import style from "./style.module.css"
+import style from "./style.module.css";
 export interface CardProps {}
 
 const Card: React.FC<CardProps> = () => {
@@ -13,17 +13,13 @@ const Card: React.FC<CardProps> = () => {
   const movieIdAs = movieInfo as MovieInfoModel;
 
   useEffect(() => {
-    console.log("hereEfect");
-
     const getInfo = async () => {
       const data = await getData(getMovieInfoUrl(movieId));
-      console.log("dataCard", data);
 
       setMovieInfo(data);
     };
     getInfo();
   }, [movieId]);
-  console.log("movieInfo", movieInfo);
 
   return (
     <div className={style.container}>

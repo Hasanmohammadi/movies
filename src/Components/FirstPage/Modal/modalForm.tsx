@@ -5,8 +5,6 @@ export interface ModalFormProps {}
 
 const ModalForm = () => {
   const onFinish = (values: addMovieBody) => {
-    console.log("values", values);
-
     fetch("http://www.moviesapi.ir/api/v1/movies", {
       method: "POST",
       headers: {
@@ -19,9 +17,7 @@ const ModalForm = () => {
       .catch((error) => console.error("Error:", error));
   };
 
-  const onFinishFailed = (errorInfo: any) => {
-    console.log("Failed:", errorInfo);
-  };
+  const onFinishFailed = (errorInfo: any) => {};
 
   return (
     <Form

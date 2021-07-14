@@ -28,8 +28,6 @@ const ContextMovies: React.FC<ContextMoviesProps> = (props) => {
     async function getMovies() {
       const data = await getData(BASE_URL);
       setMovies(data);
-      console.log("data" , data);
-      
     }
     getMovies();
   }, []);
@@ -41,8 +39,6 @@ const ContextMovies: React.FC<ContextMoviesProps> = (props) => {
 
   const nextPage = async () => {
     if (genreId) {
-      console.log(genreId);
-
       const url = createGenreUrl(genreId, page + 1);
       const data = await getData(url);
       setMovies((pre: any) => ({
@@ -61,7 +57,6 @@ const ContextMovies: React.FC<ContextMoviesProps> = (props) => {
   };
 
   const onSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
     setTimeout(() => {
       async function getMovies() {
         const data = await getData(createSearchUrl(e.target.value));
@@ -74,8 +69,6 @@ const ContextMovies: React.FC<ContextMoviesProps> = (props) => {
   const changeGenre = async (id: number) => {
     const url = createGenreUrl(id, 1);
     const data = await getData(url);
-    console.log(data);
-
     setMovies(data);
   };
 
