@@ -1,6 +1,7 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router";
 import { MovieInfoModel } from "../../../Types";
-import { moviesContext } from "./../../../Context/contextMovies";
 import { getData } from "./../../../helpers/getData";
 import { getMovieInfoUrl } from "./../../../Url/URL";
 import PhotoSlider from "./photoSlider";
@@ -9,17 +10,18 @@ export interface CardProps {}
 
 const Card: React.FC<CardProps> = () => {
   const [movieInfo, setMovieInfo] = useState<MovieInfoModel | {}>({});
-  const { movieId } = useContext(moviesContext);
+  const { id }: { name: string; id: string } = useParams();
   const movieIdAs = movieInfo as MovieInfoModel;
+  const state = useSelector((state) => state);
+  console.log(state);
 
   useEffect(() => {
     const getInfo = async () => {
-      const data = await getData(getMovieInfoUrl(movieId));
-
+      const data = await getData(getMovieInfoUrl(id));
       setMovieInfo(data);
     };
     getInfo();
-  }, [movieId]);
+  }, [id]);
 
   return (
     <div className={style.container}>
@@ -36,6 +38,7 @@ const Card: React.FC<CardProps> = () => {
       <p>Plot :{movieIdAs.plot}</p>
       <p>Runtime :{movieIdAs.runtime}</p>
       <p>Year :{movieIdAs.year}</p>
+      {/* <p>Year :{state.}</p> */}
     </div>
   );
 };

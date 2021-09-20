@@ -10,6 +10,6 @@ export const createGenreUrl = (id: number, page: number) => {
   return `https://www.moviesapi.ir/api/v1/genres/${id}/movies?page=${page}`;
 };
 
-export const getMovieInfoUrl = (id: number) => {
+export const getMovieInfoUrl = (id: number | string) => {
   return `http://www.moviesapi.ir/api/v1/movies/${id}`;
 };

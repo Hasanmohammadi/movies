@@ -21,7 +21,7 @@ const Cards: React.FC<CardsProps> = () => {
       <div className={style.container}>
         {data.map((movies: DataModel) => (
           <Link
-            to={`./${movies.title.replaceAll(" ", "-")}`}
+            to={`./${movies.title.replaceAll(" ", "-")}/${movies.id}`}
             key={movies.id}
             onClick={() => setMovieIdFn(movies.id)}
           >
