@@ -39,6 +39,8 @@ const Card: React.FC<CardProps> = () => {
       <p>Runtime :{movieIdAs.runtime}</p>
       <p>Year :{movieIdAs.year}</p>
       {/* <p>Year :{state.}</p>  */}
+      {/* <p>Year :{state.}</p>  */}
+      {/* <p>Year :{state.}</p>  */}
     </div>
   );
 };
